@@ -63,7 +63,7 @@ const NavbarContainer = styled.nav`
   background-color: #fff;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     padding: 0 20px;
   }
   @media (max-width: 320px) {
@@ -75,7 +75,7 @@ const MenuLogoWrapper = styled.div`
   display: flex;
   flex: 3;
   height: 100%;
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     flex-direction: row-reverse;
     justify-content: flex-end;
   }
@@ -124,7 +124,7 @@ const NavbarMenu = styled.div`
       }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     display: none;
   }
 `;
@@ -140,7 +140,7 @@ const HamburgerMenu = styled.div`
     height: 25px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     display: flex;
   }
 `;
@@ -174,7 +174,7 @@ const NavbarProfileShoppingCart = styled.div`
     object-fit: cover;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     img {
       width: 25px;
       height: 25px;
