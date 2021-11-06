@@ -7,12 +7,16 @@ interface PageButtonProps {
   buttonBgColor: string;
   ButtonTxtColor: string;
   buttonSize: string;
+  buttonPadding?: string;
+  buttonFontSize?: string;
 }
 
 type PageButtonStylesProps = {
   buttonBgColor: string;
   ButtonTxtColor: string;
   buttonSize: string;
+  buttonPadding?: string;
+  buttonFontSize?: string;
 };
 
 export const PageButton: FC<PageButtonProps> = ({
@@ -21,6 +25,8 @@ export const PageButton: FC<PageButtonProps> = ({
   buttonBgColor,
   ButtonTxtColor,
   buttonSize,
+  buttonPadding,
+  buttonFontSize,
 }) => {
   console.log(typeof buttonType);
   return (
@@ -28,6 +34,8 @@ export const PageButton: FC<PageButtonProps> = ({
       buttonBgColor={buttonBgColor}
       buttonSize={buttonSize}
       ButtonTxtColor={ButtonTxtColor}
+      buttonPadding={buttonPadding}
+      buttonFontSize={buttonFontSize}
     >
       <button type="button">{buttonName}</button>
     </PageButtonWrapper>
@@ -41,9 +49,11 @@ const PageButtonWrapper = styled.div<PageButtonStylesProps>`
     color: ${(props) => props.ButtonTxtColor};
     outline: none;
     border: none;
-    padding: 0.8rem 1.3rem;
+    padding: ${(props) =>
+      props.buttonPadding ? props.buttonPadding : "0.8rem 1.3rem"};
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    font-size: ${(props) => (props.buttonFontSize ? props.buttonFontSize : "")};
   }
 `;
