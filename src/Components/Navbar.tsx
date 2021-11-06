@@ -1,5 +1,6 @@
 import React, { FC, Fragment } from "react";
 import styled from "styled-components";
+import { setIsOpenMobileMenu } from "../features/MobileMenu/mobileMenuSlice";
 import { setIsOpenShoppingCart } from "../features/shoppingCart/shoppingCartSlice";
 import { useAppDispatch } from "../hook";
 import { navbarMenuData } from "../pageData/navbarMenuData";
@@ -14,6 +15,10 @@ export const Navbar: FC = () => {
     dispatch(setIsOpenShoppingCart());
   };
 
+  const mobileMenuHandler = () =>{
+   dispatch(setIsOpenMobileMenu())
+  }
+
   return (
     <NavbarContainer>
       <MenuLogoWrapper>
@@ -21,7 +26,7 @@ export const Navbar: FC = () => {
           <img src="/images/logo.svg" alt="logo" />
         </NavbarLogo>
         <HamburgerMenu>
-          <img src="/images/icon-menu.svg" alt="hamburger-menu" />
+          <img src="/images/icon-menu.svg" alt="hamburger-menu" onClick={mobileMenuHandler} />
         </HamburgerMenu>
         <NavbarMenu>
           <ul>

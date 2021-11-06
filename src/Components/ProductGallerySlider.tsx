@@ -19,7 +19,7 @@ export const ProductGallerySlider = () => {
     // slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 849,
+        breakpoint: 850,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,

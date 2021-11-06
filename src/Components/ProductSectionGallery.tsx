@@ -21,7 +21,7 @@ export const ProductSectionGallery = () => {
   }, [window.innerWidth]);
   return (
     <ProductSectionGalleryContainer>
-      {pageWidth >= 850 ? <ProductGallery /> : <ProductGallerySlider />}
+      {pageWidth > 850 ? <ProductGallery /> : <ProductGallerySlider />}
     </ProductSectionGalleryContainer>
   );
 };

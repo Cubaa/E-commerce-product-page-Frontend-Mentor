@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import mobileMenuSlice from "./features/MobileMenu/mobileMenuSlice";
 import shoppingCartSlice from "./features/shoppingCart/shoppingCartSlice";
-// ...
 
 export const store = configureStore({
   reducer: {
     isOpenShoppingcart: shoppingCartSlice.reducer,
+    isOpenMobileMenu: mobileMenuSlice.reducer
   },
 });
 
