@@ -5,16 +5,16 @@ import gsap from 'gsap'
 import { setIsOpenMobileMenu } from '../features/MobileMenu/mobileMenuSlice'
 
 export const MobileMenuBackdrop = () => {
-    const mobileMenuBackdropref = useRef(null)
+    const mobileMenuBackdropRef = useRef(null)
    const isMobileMenuOpen = useAppSelector<boolean>(state => state.isOpenMobileMenu.isOpenMobileMenu)
 const dispatch = useAppDispatch()
 
    useEffect(() => {
        if(isMobileMenuOpen){
-           gsap.to(mobileMenuBackdropref.current, {left: "0%"})
+           gsap.to(mobileMenuBackdropRef.current, {left: "0%"})
        }
        else{
-        gsap.to(mobileMenuBackdropref.current, {left: "-100%", delay: "1.22"})
+        gsap.to(mobileMenuBackdropRef.current, {left: "-100%", delay: "1.22"})
        }
    }, [isMobileMenuOpen])
 
@@ -22,7 +22,7 @@ const dispatch = useAppDispatch()
        dispatch(setIsOpenMobileMenu())
    }
     return (
-        <MobileMenuBackdropContainer ref={mobileMenuBackdropref} onClick={mobileMenuHandler}> 
+        <MobileMenuBackdropContainer ref={mobileMenuBackdropRef} onClick={mobileMenuHandler}> 
         </MobileMenuBackdropContainer>
     )
 }
