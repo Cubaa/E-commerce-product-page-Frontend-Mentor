@@ -1,6 +1,6 @@
 # E-commerce product page
 
-React, Redux, TypeScript, Styled-components, GSAP
+React, Redux Toolkit, TypeScript, Styled-components, GSAP
 
 Live: https://cubaa-ecommerce.netlify.app/
 
