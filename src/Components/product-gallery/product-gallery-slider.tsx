@@ -1,22 +1,18 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
+import { productPageGalleryImages } from "../../photos";
+import { IGalleryImage } from "../../interfaces/gallery-image.interface";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ProductPageGalleryImages } from "../photos";
-import { IProductPageGalleryImagesTypes } from "../Types/ProductPageGalleryImages";
 import "./slider.css";
-export const ProductGallerySlider = () => {
-  console.log("SLider");
 
+export const ProductGallerySlider: FC = () => {
   const settings = {
     dots: true,
     className: "slider",
     adaptiveHeight: true,
-    // infinite: true,
-    // speed: 500,
-    // slidesToShow: 1,
-    // slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 850,
@@ -36,31 +32,25 @@ export const ProductGallerySlider = () => {
       },
     ],
   };
-  console.log(ProductPageGalleryImages.length);
+
   return (
     <ProductGallerySliderContainer className="test-slider">
       <SliderWrapper>
-        {ProductPageGalleryImages.length && (
+        {productPageGalleryImages.length && (
           <Slider {...settings}>
-            {ProductPageGalleryImages.map(
-              (photo: IProductPageGalleryImagesTypes, index: number) => {
+            {productPageGalleryImages.map(
+              (photo: IGalleryImage, index: number) => {
                 return (
-                  <>
+                  <React.Fragment key={index}>
                     <span style={{ opacity: 0 }}>.</span>
                     <div key={photo.id}>
-                      <img
+                      <SliderImage
                         src={photo.src}
                         alt={"photo " + photo.id}
                         data-id={photo.id}
-                        style={{
-                          width: "100%",
-                          height: "300px",
-                          objectFit: "contain",
-                          borderRadius: "4px",
-                        }}
                       />
                     </div>
-                  </>
+                  </React.Fragment>
                 );
               }
             )}
@@ -79,7 +69,15 @@ const ProductGallerySliderContainer = styled.div`
   width: 100%;
   border-radius: 4px;
 `;
+
 const SliderWrapper = styled.div`
   width: 100%;
+  border-radius: 4px;
+`;
+
+const SliderImage = styled.img`
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
   border-radius: 4px;
 `;

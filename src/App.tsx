@@ -1,36 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { MobileMenu } from "./Components/MobileMenu";
-import { Navbar } from "./Components/Navbar";
-import { ProductSection } from "./Components/ProductSection";
+import React, { FC, useEffect } from "react";
+import { MobileMenu } from "./Components/mobile-menu/mobile-menu";
+import { Navbar } from "./Components/navbar/navbar";
+import { ProductSection } from "./Components/product-section/product-section";
 import { resetMobileMenu } from "./features/MobileMenu/mobileMenuSlice";
-import { useAppDispatch } from "./hook";
+import { useAppDispatch } from "./store/hook";
+import { useResize } from "./hooks/use-resize";
 
-function App() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-   const dispatch = useAppDispatch()
+export const App: FC = () => {
+  const windowWidth = useResize();
+  const dispatch = useAppDispatch();
 
- useEffect(() => {
-   function reseizeHandler(){
-     setWindowWidth(window.innerWidth)
-    console.log(windowWidth)
-    if(windowWidth>850){
-      dispatch(resetMobileMenu(false))
+  useEffect(() => {
+    if (windowWidth > 850) {
+      dispatch(resetMobileMenu(false));
     }
-   }
-
-   window.addEventListener('resize', reseizeHandler)
-   return () => {
-     window.removeEventListener('resize', reseizeHandler)
-   }
- }, [window.innerWidth])
+  }, [windowWidth, dispatch]);
 
   return (
     <>
       <Navbar />
-      <ProductSection />
       <MobileMenu />
+      <ProductSection />
     </>
   );
-}
-
-export default App;
+};

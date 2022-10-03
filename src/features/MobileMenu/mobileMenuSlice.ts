@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface MobileMenuState {
+interface IMobileMenuState {
   isOpenMobileMenu: boolean;
 }
 
-const initialState: MobileMenuState = {
+const initialState: IMobileMenuState = {
   isOpenMobileMenu: false,
 };
 
@@ -12,12 +12,12 @@ export const mobileMenuSlice = createSlice({
   name: "mobileMenu",
   initialState,
   reducers: {
-    setIsOpenMobileMenu(state) {
+    setIsOpenMobileMenu(state: IMobileMenuState) {
       state.isOpenMobileMenu = !state.isOpenMobileMenu;
     },
-resetMobileMenu(state, action:PayloadAction<boolean>){
-    state.isOpenMobileMenu = action.payload;
-}
+    resetMobileMenu(state: IMobileMenuState, action:PayloadAction<boolean>){
+      state.isOpenMobileMenu = action.payload;
+    }
   },
 });
 

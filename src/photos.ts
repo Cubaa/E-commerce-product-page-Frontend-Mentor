@@ -1,6 +1,6 @@
-import { IProductPageGalleryImagesTypes } from "./Types/ProductPageGalleryImages";
+import { IGalleryImage } from "./interfaces/gallery-image.interface";
 
-export const ProductPageGalleryImages: IProductPageGalleryImagesTypes[] = [
+export const productPageGalleryImages: IGalleryImage[] = [
   {
     id: 1,
     src: "/images/image-product-1.jpg",
@@ -16,5 +16,5 @@ export const ProductPageGalleryImages: IProductPageGalleryImagesTypes[] = [
   {
     id: 4,
     src: "/images/image-product-4.jpg",
-  },
+  }
 ];

@@ -6,12 +6,8 @@
   margin: 0 auto;
   height: 100%;
   border-radius: 14px;
-  /* height: 300px; */
 }
+
 .slider > button {
   display: none !important;
 }
-
-/* .slider > div {
-  min-height: 300px;
-} */

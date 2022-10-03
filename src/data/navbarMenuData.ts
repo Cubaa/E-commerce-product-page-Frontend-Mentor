@@ -1,4 +1,6 @@
-export const navbarMenuData = [
+import { INavbarLink } from "../interfaces/navbar-link.interface";
+
+export const navbarMenuLinks: INavbarLink[] = [
   {
     id: 1,
     linkName: "Collections",
@@ -18,5 +20,5 @@ export const navbarMenuData = [
   {
     id: 5,
     linkName: "Contact",
-  },
+  }
 ];

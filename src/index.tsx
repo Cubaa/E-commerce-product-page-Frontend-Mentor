@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import App from "./App";
-import { GloabStyles } from "./GlobalStyles";
-import { store } from "./store";
+import { App } from "./App";
+import { GlobalStyles } from "./GlobalStyles";
+import { store } from "./store/store";
 
 ReactDOM.render(
   <React.StrictMode>
-    <GloabStyles />
+    <GlobalStyles />
     <Provider store={store}>
       <App />
     </Provider>

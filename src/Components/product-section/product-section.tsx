@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import { ProductSectionGallery } from "./ProductSectionGallery";
-import { ProductSectionInfo } from "./ProductSectionInfo";
+import { ProductSectionGallery } from "./product-section-gallery";
+import { ProductSectionInfo } from "./product-section-info";
 
-export const ProductSection = () => {
+export const ProductSection: FC = () => {
   return (
     <ProductSectionContainer>
       <ProductSectionGallery />
