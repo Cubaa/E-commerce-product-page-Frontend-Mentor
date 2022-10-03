@@ -1,4 +1,9 @@
-In progres...
+React, Redux, TypeScript, Styled-components
+
+Live: https://cubaa-ecommerce.netlify.app/
+
+Design files for mobile & desktop layouts from frontendmentor.io
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
