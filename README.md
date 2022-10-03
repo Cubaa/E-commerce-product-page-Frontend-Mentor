@@ -1,4 +1,4 @@
-# E-commerce-product-page
+# E-commerce product page
 
 React, Redux, TypeScript, Styled-components, GSAP
 
